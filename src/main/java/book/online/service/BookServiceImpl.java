@@ -1,23 +1,39 @@
 package book.online.service;
 
-import book.online.model.Book;
+import book.online.dto.BookDto;
+import book.online.dto.CreateBookRequestDto;
+import book.online.mapper.BookMapper;
 import book.online.repository.BookRepository;
+import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BookServiceImpl implements BookService {
-    @Autowired
     private BookRepository bookRepository;
+    private BookMapper bookMapper;
 
-    @Override
-    public Book save(Book book) {
-        return bookRepository.save(book);
+    public BookServiceImpl(BookRepository bookRepository, BookMapper bookMapper) {
+        this.bookRepository = bookRepository;
+        this.bookMapper = bookMapper;
     }
 
     @Override
-    public List<Book> findAll() {
-        return bookRepository.findAll();
+    public BookDto save(CreateBookRequestDto requestDto) {
+        return bookMapper.toDto(bookRepository.save(bookMapper.toModel(requestDto)));
+    }
+
+    @Override
+    public List<BookDto> findAll() {
+        return bookRepository.findAll().stream()
+                .map(bookMapper::toDto)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public BookDto findById(Long id) {
+        return bookMapper.toDto(bookRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Can`t find book by id: " + id)));
     }
 }
