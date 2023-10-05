@@ -10,6 +10,7 @@ import book.online.repository.book.BookSpecificationBuilder;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -32,8 +33,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<BookDto> findAllBooks() {
-        return bookRepository.findAll().stream()
+    public List<BookDto> findAllBooks(Pageable pageable) {
+        return bookRepository.findAll(pageable).stream()
                 .map(bookMapper::toDto)
                 .collect(Collectors.toList());
     }
