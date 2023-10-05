@@ -31,14 +31,14 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: price
-                  type: varchar(255)
+                  type: numeric
                   constraints:
                     nullable: false
               - column:
                   name: description
                   type: varchar(255)
               - column:
-                  name: coverImage
+                  name: cover_image
                   type: varchar(255)
               - column:
                   name: is_deleted
