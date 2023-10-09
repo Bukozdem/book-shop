@@ -8,15 +8,15 @@ import lombok.Data;
 
 @Data
 public class CreateBookRequestDto {
-    @NotNull
+    @NotNull(message = "Field title should not be empty")
     private String title;
-    @NotNull
+    @NotNull(message = "Field author should not be empty")
     private String author;
-    @NotNull
+    @NotNull(message = "Field isbn should not be empty")
     @Isbn
     private String isbn;
-    @NotNull
-    @Min(0)
+    @NotNull(message = "Field price should not be empty")
+    @Min(value = 0, message = "Price should not be less than 0")
     private BigDecimal price;
     private String description;
     private String coverImage;

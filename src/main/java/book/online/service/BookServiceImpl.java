@@ -10,22 +10,16 @@ import book.online.repository.book.BookSpecificationBuilder;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class BookServiceImpl implements BookService {
-    private BookRepository bookRepository;
-    private BookMapper bookMapper;
-    private BookSpecificationBuilder bookSpecificationBuilder;
-
-    public BookServiceImpl(BookRepository bookRepository,
-                           BookMapper bookMapper,
-                           BookSpecificationBuilder bookSpecificationBuilder) {
-        this.bookRepository = bookRepository;
-        this.bookMapper = bookMapper;
-        this.bookSpecificationBuilder = bookSpecificationBuilder;
-    }
+    private final BookRepository bookRepository;
+    private final BookMapper bookMapper;
+    private final BookSpecificationBuilder bookSpecificationBuilder;
 
     @Override
     public BookDto saveBook(CreateBookRequestDto requestDto) {
