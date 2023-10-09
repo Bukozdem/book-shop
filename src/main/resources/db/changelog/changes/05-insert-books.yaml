@@ -1,0 +1,69 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-books
+      author: book-online
+      changes:
+        - insert:
+            tableName: books
+            columns:
+              - column: {name: title, value: "King John"}
+              - column: {name: author, value: "William Shakespeare"}
+              - column: {name: isbn, value: "0000000001"}
+              - column: {name: price, value: "100"}
+              - column: {name: description, value: "The Life and Death of King John, a history play by William Shakespeare."}
+              - column: {name: cover_image, value: "https://yakaboo.ua/media/img1.jpg"}
+        - insert:
+            tableName: books
+            columns:
+              - column: { name: title, value: "Harry Potter and the Philosopher's Stone" }
+              - column: { name: author, value: "J. K. Rowling" }
+              - column: { name: isbn, value: "0000000002" }
+              - column: { name: price, value: "150" }
+              - column: { name: description, value: "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J. K. Rowling." }
+              - column: { name: cover_image, value: "https://yakaboo.ua/media/img2.jpg" }
+        - insert:
+            tableName: books
+            columns:
+              - column: { name: title, value: "Carrie" }
+              - column: { name: author, value: "Stephen King" }
+              - column: { name: isbn, value: "0000000003" }
+              - column: { name: price, value: "200" }
+              - column: { name: description, value: "Carrie is a 1974 horror novel, the first by American author Stephen King." }
+              - column: { name: cover_image, value: "https://yakaboo.ua/media/img3.jpg" }
+        - insert:
+            tableName: books
+            columns:
+              - column: { name: title, value: "Miss Marple" }
+              - column: { name: author, value: "Agatha Christie"}
+              - column: { name: isbn, value: "0000000004" }
+              - column: { name: price, value: "250" }
+              - column: { name: description, value: "Miss Jane Marple is a fictional character in Agatha Christie's crime novels and short stories." }
+              - column: { name: cover_image, value: "https://yakaboo.ua/media/img4.jpg" }
+        - insert:
+            tableName: books
+            columns:
+              - column: { name: title, value: "The Colour of Magic" }
+              - column: { name: author, value: "Terry Pratchett" }
+              - column: { name: isbn, value: "0000000005" }
+              - column: { name: price, value: "300" }
+              - column: { name: description, value: "The Colour of Magic is a 1983 fantasy comedy novel by Terry Pratchett, and is the first book of the Discworld series." }
+              - column: { name: cover_image, value: "https://yakaboo.ua/media/img5.jpg" }
+        - insert:
+            tableName: books
+            columns:
+              - column: { name: title, value: "Harry Potter and the Chamber of Secrets" }
+              - column: { name: author, value: "J. K. Rowling" }
+              - column: { name: isbn, value: "0000000006" }
+              - column: { name: price, value: "50" }
+              - column: { name: description, value: "Harry Potter and the Chamber of Secrets is a fantasy novel written by British author J. K. Rowling and the second novel in the Harry Potter series." }
+              - column: { name: cover_image, value: "https://yakaboo.ua/media/img6.jpg" }
+        - insert:
+            tableName: books
+            columns:
+              - column: { name: title, value: "Richard II" }
+              - column: { name: author, value: "William Shakespeare" }
+              - column: { name: isbn, value: "0000000007" }
+              - column: { name: price, value: "350" }
+              - column: { name: description, value: "The Life and Death of King Richard the Second, commonly called Richard II, is a history play by William Shakespeare believed to have been written around 1595." }
+              - column: { name: cover_image, value: "https://yakaboo.ua/media/img7.jpg" }
+
