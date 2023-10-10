@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-admin-and-user-for-test
+      author: book-online
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: email, value: "admin@admin.ua" }
+              - column: { name: password, value: "$2a$10$EFzLWeCI3Ap.Z9oCppX2iOycPFs6Qd9cZ9H4v0JWA6fcb2oEPFG6m" }
+              - column: { name: first_name, value: "First" }
+              - column: { name: last_name, value: "Last" }
+              - column: { name: shipping_address, value: "Address" }
+              - column: { name: is_deleted, value: false }
+        - insert:
+            tableName: users_roles
+            columns:
+              - column: { name: user_id, value: "1" }
+              - column: { name: role_id, value: "1" }
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: email, value: "user@user.ua" }
+              - column: { name: password, value: "$2a$10$EFzLWeCI3Ap.Z9oCppX2iOycPFs6Qd9cZ9H4v0JWA6fcb2oEPFG6m" }
+              - column: { name: first_name, value: "Name" }
+              - column: { name: last_name, value: "Surname" }
+              - column: { name: shipping_address, value: "Location" }
+              - column: { name: is_deleted, value: false }
+        - insert:
+            tableName: users_roles
+            columns:
+              - column: { name: user_id, value: "2" }
+              - column: { name: role_id, value: "2" }

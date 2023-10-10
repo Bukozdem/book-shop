@@ -12,6 +12,8 @@ import jakarta.persistence.Table;
 import java.util.Collection;
 import java.util.Set;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import org.springframework.security.core.GrantedAuthority;
@@ -39,6 +41,8 @@ public class User implements UserDetails {
     @Column(nullable = false, name = "is_deleted")
     private boolean isDeleted = false;
     @ManyToMany
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))

@@ -66,4 +66,53 @@ databaseChangeLog:
               - column: { name: price, value: "350" }
               - column: { name: description, value: "The Life and Death of King Richard the Second, commonly called Richard II, is a history play by William Shakespeare believed to have been written around 1595." }
               - column: { name: cover_image, value: "https://yakaboo.ua/media/img7.jpg" }
-
+        - insert:
+            tableName: categories
+            columns:
+              - column: { name: name, value: "Adventure stories" }
+              - column: { name: description, value: "Adventure novels whisk readers off to faraway lands." }
+        - insert:
+            tableName: categories
+            columns:
+              - column: { name: name, value: "Classics" }
+              - column: { name: description, value: "Classics encompass a range of genres — but they always stand the test of time." }
+        - insert:
+            tableName: categories
+            columns:
+              - column: { name: name, value: "Fantasy" }
+              - column: { name: description, value: "Fantasy books are probably the most popular modern book genre." }
+        - insert:
+            tableName: books_categories
+            columns:
+              - column: { name: book_id, value: "1" }
+              - column: { name: category_id, value: "2" }
+        - insert:
+            tableName: books_categories
+            columns:
+              - column: { name: book_id, value: "2" }
+              - column: { name: category_id, value: "3" }
+        - insert:
+            tableName: books_categories
+            columns:
+              - column: { name: book_id, value: "3" }
+              - column: { name: category_id, value: "1" }
+        - insert:
+            tableName: books_categories
+            columns:
+              - column: { name: book_id, value: "4" }
+              - column: { name: category_id, value: "1" }
+        - insert:
+            tableName: books_categories
+            columns:
+              - column: { name: book_id, value: "5" }
+              - column: { name: category_id, value: "2" }
+        - insert:
+            tableName: books_categories
+            columns:
+              - column: { name: book_id, value: "6" }
+              - column: { name: category_id, value: "3" }
+        - insert:
+            tableName: books_categories
+            columns:
+              - column: { name: book_id, value: "7" }
+              - column: { name: category_id, value: "2" }
