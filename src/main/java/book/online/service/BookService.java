@@ -1,6 +1,7 @@
 package book.online.service;
 
 import book.online.dto.BookDto;
+import book.online.dto.BookDtoWithoutCategoryIds;
 import book.online.dto.BookSearchParameters;
 import book.online.dto.CreateBookRequestDto;
 import java.util.List;
@@ -15,7 +16,9 @@ public interface BookService {
 
     BookDto updateBook(CreateBookRequestDto requestDto, Long id);
 
-    String deleteBook(Long id);
+    void deleteBook(Long id);
 
     List<BookDto> searchBooks(BookSearchParameters parameters);
+
+    List<BookDtoWithoutCategoryIds> getBooksByCategoryId(Long id);
 }

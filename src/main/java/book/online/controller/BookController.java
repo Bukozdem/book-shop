@@ -5,6 +5,7 @@ import book.online.dto.BookSearchParameters;
 import book.online.dto.CreateBookRequestDto;
 import book.online.service.BookService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import java.util.List;
@@ -43,6 +44,8 @@ public class BookController {
 
     @PostMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @ApiResponse(responseCode = "201",
+            description = "Book was created successfully")
     @Operation(summary = "Create a new book", description = "Save a new book to database")
     public BookDto createBook(@RequestBody @Valid CreateBookRequestDto bookDto) {
         return bookService.saveBook(bookDto);
@@ -50,6 +53,8 @@ public class BookController {
 
     @PutMapping(value = "/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @ApiResponse(responseCode = "200",
+            description = "Book was updated successfully")
     @Operation(summary = "Update a book", description = "Update fields in book")
     public BookDto updateBook(@RequestBody @Valid CreateBookRequestDto requestDto,
                               @PathVariable Long id) {
@@ -59,8 +64,10 @@ public class BookController {
     @DeleteMapping(value = "/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Operation(summary = "Delete a book", description = "Delete a book by id")
-    public String deleteBook(@PathVariable Long id) {
-        return bookService.deleteBook(id);
+    @ApiResponse(responseCode = "204",
+            description = "Book was deleted successfully")
+    public void deleteBook(@PathVariable Long id) {
+        bookService.deleteBook(id);
     }
 
     @GetMapping(value = "/search")
