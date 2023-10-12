@@ -1,8 +1,8 @@
 package book.online.mapper;
 
 import book.online.config.MapperConfig;
-import book.online.dto.UserRegistrationRequestDto;
-import book.online.dto.UserRegistrationResponseDto;
+import book.online.dto.user.UserRegistrationRequestDto;
+import book.online.dto.user.UserRegistrationResponseDto;
 import book.online.model.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

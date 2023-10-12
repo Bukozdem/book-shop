@@ -1,8 +1,8 @@
 package book.online.controller;
 
-import book.online.dto.BookDto;
-import book.online.dto.BookSearchParameters;
-import book.online.dto.CreateBookRequestDto;
+import book.online.dto.book.BookDto;
+import book.online.dto.book.BookSearchParameters;
+import book.online.dto.book.CreateBookRequestDto;
 import book.online.service.BookService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

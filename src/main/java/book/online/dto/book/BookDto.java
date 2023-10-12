@@ -1,10 +1,11 @@
-package book.online.dto;
+package book.online.dto.book;
 
 import java.math.BigDecimal;
+import java.util.Set;
 import lombok.Data;
 
 @Data
-public class BookDtoWithoutCategoryIds {
+public class BookDto {
     private Long id;
     private String title;
     private String author;
@@ -12,4 +13,5 @@ public class BookDtoWithoutCategoryIds {
     private BigDecimal price;
     private String description;
     private String coverImage;
+    private Set<Long> categoryIds;
 }
