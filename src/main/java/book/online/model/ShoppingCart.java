@@ -20,7 +20,7 @@ import org.hibernate.annotations.Where;
 @Entity
 @Data
 @SQLDelete(sql = "UPDATE shopping_carts SET is_deleted = true WHERE id = ?")
-@Where(clause = "is_deleted=false")
+@Where(clause = "is_deleted is false")
 @Table(name = "shopping_carts")
 public class ShoppingCart {
     @Id
@@ -29,6 +29,8 @@ public class ShoppingCart {
     @OneToOne
     @MapsId
     @PrimaryKeyJoinColumn(name = "user_id")
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private User user;
     @OneToMany(mappedBy = "shoppingCart")
     @EqualsAndHashCode.Exclude

@@ -46,8 +46,9 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Override
     public CartResponseDto updateCartItem(UpdateBookCartRequestDto updateBookCartRequestDto,
                                           Long id) {
-        checkedCartItemId(id);
-        CartItem cartItem = cartItemRepository.findById(id).get();
+        CartItem cartItem = cartItemRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Couldn't find item in cart by id "
+                + id));
         cartItem.setQuantity(updateBookCartRequestDto.getQuantity());
         cartItemRepository.save(cartItem);
         return getShoppingCart();
@@ -55,15 +56,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public CartResponseDto deleteCartItem(Long id) {
-        checkedCartItemId(id);
         cartItemRepository.deleteById(id);
         return getShoppingCart();
-    }
-
-    private void checkedCartItemId(Long id) {
-        cartItemRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Couldn't find item in cart by id "
-                        + id));
     }
 
     private ShoppingCart findShoppingCart() {
