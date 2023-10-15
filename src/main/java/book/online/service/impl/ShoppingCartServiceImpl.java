@@ -15,6 +15,7 @@ import book.online.service.ShoppingCartService;
 import book.online.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -60,9 +61,16 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         return getShoppingCart();
     }
 
-    private ShoppingCart findShoppingCart() {
+    @Override
+    public ShoppingCart findShoppingCart() {
         return shoppingCartRepository.findById(userService.getUserId())
                 .orElseThrow(() -> new EntityNotFoundException("Couldn't find cart for user by id "
                         + userService.getUserId()));
+    }
+
+    @Transactional
+    @Override
+    public void clearCart() {
+        cartItemRepository.deleteByShoppingCart(findShoppingCart());
     }
 }

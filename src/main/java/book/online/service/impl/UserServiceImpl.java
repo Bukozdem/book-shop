@@ -43,9 +43,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Long getUserId() {
+        return getUser().getId();
+    }
+
+    @Override
+    public User getUser() {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
         return userRepository.findByEmail(email)
                 .orElseThrow(() -> new EntityNotFoundException(String
-                        .join("Couldn't find user by email", email))).getId();
+                        .join("Couldn't find user by email", email)));
     }
 }
