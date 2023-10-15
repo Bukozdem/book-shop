@@ -1,7 +1,7 @@
 package book.online.service.impl;
 
-import book.online.dto.CategoryRequestDto;
-import book.online.dto.CategoryResponseDto;
+import book.online.dto.category.CategoryRequestDto;
+import book.online.dto.category.CategoryResponseDto;
 import book.online.mapper.CategoryMapper;
 import book.online.model.Category;
 import book.online.repository.category.CategoryRepository;

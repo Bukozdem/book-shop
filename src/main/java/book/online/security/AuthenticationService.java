@@ -1,7 +1,7 @@
 package book.online.security;
 
-import book.online.dto.UserLoginRequestDto;
-import book.online.dto.UserLoginResponseDto;
+import book.online.dto.user.UserLoginRequestDto;
+import book.online.dto.user.UserLoginResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

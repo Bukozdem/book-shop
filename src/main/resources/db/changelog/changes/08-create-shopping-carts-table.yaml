@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-shopping-carts
+      author: book-online
+      changes:
+        - createTable:
+            tableName: shopping_carts
+            columns:
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: "fk_carts_users_id"
+                    references: users(id)
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: is_deleted
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false

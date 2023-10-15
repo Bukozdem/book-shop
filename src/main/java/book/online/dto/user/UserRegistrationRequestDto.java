@@ -1,4 +1,4 @@
-package book.online.dto;
+package book.online.dto.user;
 
 import book.online.validation.Password;
 import jakarta.validation.constraints.Email;

@@ -1,9 +1,9 @@
 package book.online.service.impl;
 
-import book.online.dto.BookDto;
-import book.online.dto.BookDtoWithoutCategoryIds;
-import book.online.dto.BookSearchParameters;
-import book.online.dto.CreateBookRequestDto;
+import book.online.dto.book.BookDto;
+import book.online.dto.book.BookDtoWithoutCategoryIds;
+import book.online.dto.book.BookSearchParameters;
+import book.online.dto.book.CreateBookRequestDto;
 import book.online.mapper.BookMapper;
 import book.online.model.Book;
 import book.online.model.Category;

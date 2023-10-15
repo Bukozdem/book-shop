@@ -1,7 +1,7 @@
 package book.online.service;
 
-import book.online.dto.CategoryRequestDto;
-import book.online.dto.CategoryResponseDto;
+import book.online.dto.category.CategoryRequestDto;
+import book.online.dto.category.CategoryResponseDto;
 import java.util.List;
 import org.springframework.data.domain.Pageable;
 

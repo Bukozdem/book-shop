@@ -1,8 +1,8 @@
 package book.online.mapper;
 
 import book.online.config.MapperConfig;
-import book.online.dto.CategoryRequestDto;
-import book.online.dto.CategoryResponseDto;
+import book.online.dto.category.CategoryRequestDto;
+import book.online.dto.category.CategoryResponseDto;
 import book.online.model.Category;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

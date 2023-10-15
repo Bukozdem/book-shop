@@ -1,6 +1,6 @@
 package book.online.validation;
 
-import book.online.dto.UserRegistrationRequestDto;
+import book.online.dto.user.UserRegistrationRequestDto;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.beans.BeanWrapperImpl;

@@ -1,8 +1,8 @@
 package book.online.controller;
 
-import book.online.dto.BookDtoWithoutCategoryIds;
-import book.online.dto.CategoryRequestDto;
-import book.online.dto.CategoryResponseDto;
+import book.online.dto.book.BookDtoWithoutCategoryIds;
+import book.online.dto.category.CategoryRequestDto;
+import book.online.dto.category.CategoryResponseDto;
 import book.online.service.BookService;
 import book.online.service.CategoryService;
 import io.swagger.v3.oas.annotations.Operation;
