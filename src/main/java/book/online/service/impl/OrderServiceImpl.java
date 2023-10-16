@@ -7,7 +7,6 @@ import book.online.dto.order.StatusRequestDto;
 import book.online.exception.EntityNotFoundException;
 import book.online.mapper.OrderMapper;
 import book.online.model.Order;
-import book.online.model.Order.Status;
 import book.online.model.ShoppingCart;
 import book.online.repository.order.OrderItemRepository;
 import book.online.repository.order.OrderRepository;
