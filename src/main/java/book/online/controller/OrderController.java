@@ -54,7 +54,7 @@ public class OrderController {
     @ApiResponse(responseCode = "202",
             description = "Order status was updated successfully")
     public OrderResponseDto updateOrdersStatus(@PathVariable Long id,
-                                               @RequestBody @Valid StatusRequestDto dto) {
+                                               @RequestBody StatusRequestDto dto) {
         return orderService.updateOrdersStatus(dto, id);
     }
 

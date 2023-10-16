@@ -51,7 +51,7 @@ public class OrderServiceImpl implements OrderService {
     public OrderResponseDto updateOrdersStatus(StatusRequestDto dto, Long id) {
         Order order = orderRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Couldn't find order by id " + id));
-        order.setStatus(Status.valueOf(dto.getStatus()));
+        order.setStatus(dto.status());
         return orderMapper.toOrderResponseDto(orderRepository.save(order));
     }
 

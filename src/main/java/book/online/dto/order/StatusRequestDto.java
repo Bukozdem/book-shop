@@ -1,11 +1,6 @@
 package book.online.dto.order;
 
-import jakarta.validation.constraints.Pattern;
-import lombok.Data;
+import book.online.model.Order.Status;
 
-@Data
-public class StatusRequestDto {
-    @Pattern(regexp = "PENDING|DELIVERED|COMPLETED",
-            message = "Status should be only PENDING, DELIVERED or COMPLETED")
-    private String status;
+public record StatusRequestDto(Status status) {
 }
