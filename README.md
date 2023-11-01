@@ -1,5 +1,3 @@
-📔 BookWonders
-
 📄 Project description:
 
 BookWonders is an innovative web stateless application designed to provide an exceptional book shopping experience to users depending on their role. The platform offers a diverse collection of books from various categories, allowing users to explore and purchase books. The project combines Java-based backend technologies, including Spring Framework, JWT and Docker, to ensure efficient data management and secure user interactions.
